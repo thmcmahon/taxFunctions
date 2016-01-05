@@ -1,0 +1,11 @@
+Package: taxFunctions
+Type: Package
+Title: Income tax functions
+Depends: R (>= 2.10)
+Version: 0.1
+Date: 2015-12-15
+Author: Thomas McMahon
+Maintainer: Thomas McMahon <thmcmahon@gmail.com>
+Description: Functions to calculate tax liability
+License: CC0
+LazyData: TRUE
