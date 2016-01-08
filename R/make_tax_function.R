@@ -13,11 +13,8 @@
 #' # Make a tax calculator using the 2012-13 income tax rates and brackets
 #' pit_12_13 <- make_tax_function(rates = c(0, .19, .325, .37, .45),
 #'                                brackets = c(18200,37000,80000,180000,Inf))
-make_tax_function <- function(rates, brackets, super = FALSE) {
+make_tax_function <- function(rates, brackets) {
     function(income) {
-        income_by_bracket <- diff(c(0, pmin(income, brackets)))
-        tax <- sum(income_by_bracket * rates)
-        # If it's a superannuation tax then we need to get nine per cent
-        ifelse(super == FALSE, return(tax), return(tax * .09))
+        mcalc(income, rates = rates, brackets = brackets, category = "tax")
     }
 }

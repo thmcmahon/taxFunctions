@@ -1,7 +1,7 @@
 newstart <- function(income,
                      partner_income = 0,
-                     brackets = c(102,252,Inf),
-                     rate = c(0,.5,.6),
+                     taper_brackets = c(102,252,Inf),
+                     taper_rates = c(0,.5,.6),
                      category = 
                        c("single, no children",
                          "single, with children",
@@ -11,7 +11,7 @@ newstart <- function(income,
   {
   # Todo
   #
-  # This does not account 
+  # This function does not properly account for edge cases
   # 
   # Newstart has a number of different categories with different payment rates
   if (match.arg(category) == "single, no children") {
@@ -26,11 +26,12 @@ newstart <- function(income,
     amount <- 731.2
   }
   # Taper test
-  if (match.arg(category != "partnered")) {
-    income_by_bracket <- diff(c(0, pmin(income, brackets)))
-    return(amount - sum(income_by_bracket * rate))
+  if (match.arg(category) != "partnered") {
+    return(mcalc(income, benefit = amount, brackets = taper_brackets,
+                 rates = taper_rates, category = "transfer"))
   } else {
-    income_by_bracket <- diff(c(0, pmin(sum(income, partner_income), brackets)))
-    return(amount - sum(income_by_bracket * rate))
+    return(mcalc(sum(income, partner_income), benefit = amount, 
+                 brackets = taper_brackets,
+                 rates = taper_rates, category = "transfer"))
   }
 }

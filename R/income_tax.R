@@ -14,8 +14,7 @@ income_tax <- function(income,
                        rates = c(0, .19, .325, .37, .45),
                        brackets = c(18200,37000,80000,180000,Inf),
                        super = FALSE) {
-    income_by_bracket <- diff(c(0, pmin(income, brackets)))
-    tax <- sum(income_by_bracket * rates)
+    tax <- mcalc(income, rates = rates, brackets = brackets, category = "tax")
     # If it's a superannuation tax then we need to get nine per cent
     ifelse(super == FALSE, return(tax), return(tax * .09))
 }
