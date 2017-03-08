@@ -45,7 +45,8 @@ medicare_levy <- function(x, rate = .02, taper_rate = .1, lower_bound_single = 2
     stop('rel_status must either be single or couple')
   }
   if (rel_status == 'single' & (spouse_income > 0 | n_children > 0)) {
-    stop('Income or children implies non single')
+    warning('spouse_income or n_children implies rel_status = couple, assuming rel_status = couple')
+    rel_status <- 'couple'
   }
 # Singles ------------------------------------------------------------------------------------------
   x_above_upper_bound <- check_upper_bound(x, lower_bound = lower_bound_single)
