@@ -5,6 +5,8 @@
 #' @param amount Numeric. The untapered low income tax offset amount.
 #' @param taper_brackets Numeric vector.
 #'
+#' @export
+#'
 #' @examples
 #' lito(18000)
 lito <- function(income, amount = 445, taper_brackets = c(37000, 66667),

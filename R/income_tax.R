@@ -5,6 +5,8 @@
 #' @param rates Numeric vector. Rate for each bracket.
 #' @param brackets Numeric vector. Top of each tax bracket.
 #' 
+#' @export
+#' 
 #' @examples 
 #' # Calculate tax liability for taxpayer with gross income of 50,000
 #' income_tax(50000)

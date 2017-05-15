@@ -9,3 +9,5 @@ Maintainer: Thomas McMahon <thmcmahon@gmail.com>
 Description: Functions to calculate tax liability
 License: CC0
 LazyData: TRUE
+Suggests: testthat
+RoxygenNote: 6.0.1
