@@ -5,15 +5,14 @@
 \title{Calculate the low income tax offset. This is deducted from non-refundable
 tax offset that reduces individuals' tax owed.}
 \usage{
-lito(income, amount = 445, taper_brackets = c(37000, 66667),
-  taper_rate = 0.015)
+lito(income, value = 445, taper_start = 37000, taper_rate = 0.015)
 }
 \arguments{
 \item{income}{Numeric. Gross income.}
 
-\item{amount}{Numeric. The untapered low income tax offset amount.}
+\item{value}{Numeric. The full value of the offset.}
 
-\item{taper_brackets}{Numeric vector.}
+\item{taper_start}{Numeric. Income level from which to start tapering.}
 }
 \description{
 Calculate the low income tax offset. This is deducted from non-refundable
