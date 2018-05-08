@@ -3,5 +3,6 @@
 export(hecs)
 export(income_tax)
 export(lito)
+export(lmito)
 export(medicare_levy)
 export(ml_progressive)
