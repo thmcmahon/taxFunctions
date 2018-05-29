@@ -4,10 +4,10 @@
 \alias{check_upper_bound}
 \title{Check whether an income should be tapered}
 \usage{
-check_upper_bound(x, lower_bound, rate = 0.02, taper_rate = 0.1)
+check_upper_bound(income, lower_bound, rate = 0.02, taper_rate = 0.1)
 }
 \arguments{
-\item{x}{Income}
+\item{income}{Income}
 
 \item{lower_bound}{Level of the lower bound}
 

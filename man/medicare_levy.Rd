@@ -4,13 +4,13 @@
 \alias{medicare_levy}
 \title{Calculate the amount of medicare levy owed}
 \usage{
-medicare_levy(x, rate = 0.02, taper_rate = 0.1,
+medicare_levy(income, rate = 0.02, taper_rate = 0.1,
   lower_bound_single = 21335, lower_bound_couple = 36001,
   spouse_income = 0, n_children = 0, children_reduction = 3306,
   rel_status = "single")
 }
 \arguments{
-\item{x}{Income of the person for whom the levy is being calulated}
+\item{income}{Income of the person for whom the levy is being calulated}
 
 \item{rate}{Medicare levy rate}
 
